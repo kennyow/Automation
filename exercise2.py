@@ -1,13 +1,12 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
 import time
+from datetime import datetime as dt
 
 
-#* AUTOMATE LOGIN PROCESS
-
-
+#* SCRAPING THE PHRASE OF THE SITE
+#* INITIALIZING SELENIUM
 def get_driver():
   #Set options to make browser easier
   options = webdriver.ChromeOptions()
@@ -20,24 +19,32 @@ def get_driver():
   
   
   driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
-  driver.get(r'http://automated.pythonanywhere.com/login/')
+  driver.get(r'http://automated.pythonanywhere.com')
   return driver
+
+
 
 def clean_text(text):
   """Extract only the temperature from teh text"""
   output = float(text.split(": ")[1]) #From the text, it creates a list with the name and the value, and get the value. 
   return output
 
+
+def write_file(text):
+  """Write input text into a text file"""
+  filename = f'{dt.now().strftime("%Y-%m-%d.%H-%M-%S")}.txt'
+  with open(filename, 'w') as file:
+    file.write(text)
+
+
 def main():
   driver = get_driver()
-  driver.find_element(by="id",value='id_username').send_keys("automated")
-  time.sleep(2)
-  driver.find_element(by="id",value='id_password').send_keys("automatedautomated" + Keys.RETURN) #Keys.RETURN gives the Enter
-  print(driver.current_url) # Gets the current URL(in case, https://automated.pythonanywhere.com/dashboard/)
-  
-  #*CLICK HOME BUTTON
-  driver.find_element(by="xpath" , value = '/html/body/nav/div/a').click() 
-  time.sleep(2)
-  print(driver.current_url) #Gets https://automated.pythonanywhere.com/
+  while True:
+    time.sleep(2)
+    element = driver.find_element(by="xpath",value='/html/body/div[1]/div/h1[2]')
+    text = str(clean_text(element.text))
+    write_file(text)
+
+
 
 print(main())

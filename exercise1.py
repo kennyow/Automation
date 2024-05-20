@@ -5,8 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-#* AUTOMATE LOGIN PROCESS
-
+#* ENTER THE SITE AND GET THE TEMPERATURE VALUE
 
 def get_driver():
   #Set options to make browser easier
@@ -33,11 +32,14 @@ def main():
   driver.find_element(by="id",value='id_username').send_keys("automated")
   time.sleep(2)
   driver.find_element(by="id",value='id_password').send_keys("automatedautomated" + Keys.RETURN) #Keys.RETURN gives the Enter
-  print(driver.current_url) # Gets the current URL(in case, https://automated.pythonanywhere.com/dashboard/)
+  
   
   #*CLICK HOME BUTTON
   driver.find_element(by="xpath" , value = '/html/body/nav/div/a').click() 
   time.sleep(2)
-  print(driver.current_url) #Gets https://automated.pythonanywhere.com/
+  
+  
+  element = driver.find_element(by="xpath",value='/html/body/div[1]/div/h1[2]')
+  return clean_text(element.text)
 
 print(main())
