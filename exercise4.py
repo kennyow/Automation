@@ -5,6 +5,7 @@ from pathlib import Path
 #Gives the entire path since the origin
 #print(path.absolute())
 
+# Gives the entire path where the term '14' is located into root_dir
 root_dir = Path('Automation/files8')
 search_term = '14'
 
