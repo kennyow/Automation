@@ -3,6 +3,8 @@ import yagmail
 import os
 
 my_email = os.getenv('email')
+
+#google app 2 step verification password
 my_password = os.getenv('password')
 
 print(my_email, my_password)
