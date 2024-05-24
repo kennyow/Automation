@@ -25,8 +25,8 @@ df = pd.read_csv("Automation/automating_emails/contacts.csv")
 for index, row in df.iterrows():
     while True:
         now = dt.now()
-        if now.hour == 10 and now.minute == 45:
-            contents = ["""
+        if now.hour == 11 and now.minute == 8:
+            contents = [f"""
                 Hi, {row['name']}, o majestoso poderoso! Bora cantar!
 
                 Oh, stellar
@@ -61,7 +61,7 @@ for index, row in df.iterrows():
                 How do you do it?
                 Make me feel like I do
                 How do you do it?
-                It's better than I ever knew""", 'email_with_attachment.txt']
+                It's better than I ever knew""", 'Automation/automating_emails/email_with_attachment.txt']
             #Login
             yag = yagmail.SMTP(user=my_email, password=my_password)
             yag.send(to=row['email'], subject=subject, contents=contents)
