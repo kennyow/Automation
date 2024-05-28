@@ -39,7 +39,7 @@ layout.addWidget(destroy_btn, alignment=Qt.AlignmentFlag.AlignCenter)
 destroy_btn.clicked.connect(destroy_files)
 
 message = QLabel('')
-layout.addWidget(message)
+layout.addWidget(message, alignment=Qt.AlignmentFlag.AlignCenter)
 
 
 window.setLayout(layout)
