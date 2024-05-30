@@ -12,11 +12,13 @@ width = frame.shape[1]
 face_cascade = cv2.CascadeClassifier(path+'faces.xml')
 output = cv2.VideoWriter(path+'output.avi', cv2.VideoWriter_fourcc(*'DIVX'), 30, (width, height))
 
+count = 0
 while success:
     faces = face_cascade.detectMultiScale(frame, 1.1, 4)
     for (x, y , w, h) in faces:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (255,255,255), 4)
     output.write(frame)
     success, frame = video.read()  #Get the second frame and so on
-
+    count += 1
+    #print(count) Count the frames
 output.release()
