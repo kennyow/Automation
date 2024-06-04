@@ -1,4 +1,5 @@
-#pip install pyautoguihttps://accounts.google.com/b/0/AddMailService
+#pip install pyautogui
+# https://jspaint.app/
 import pyautogui
 from time import sleep
 from mss import mss, tools
@@ -76,43 +77,43 @@ def square():
     pyautogui.moveTo(last_position, duration=0.5)
  
 
+# SHAPE
+straight_line()
+pyautogui.moveTo(x=1084, y=790)
+pyautogui.drag(200, 0, duration = t, button='left')
+pencil()
+pyautogui.drag(100, 0, duration = t, button='left')
+straight_line()
+pyautogui.drag(0, -150, duration = t, button='left')
+pyautogui.drag(320, 0, duration = t, button='left')
+pyautogui.drag(0, -350, duration = t, button='left')
+pyautogui.drag(-280, 0, duration = t, button='left')
+pencil()
+pyautogui.drag(-100, 0, duration = t, button='left')
+straight_line()
+pyautogui.drag(-240, 0, duration = t, button='left')
+pyautogui.drag(0, 500, duration = t, button='left')
 
-# straight_line()
-# pyautogui.moveTo(x=1084, y=790)
-# pyautogui.drag(200, 0, duration = t, button='left')
-# pencil()
-# pyautogui.drag(100, 0, duration = t, button='left')
-# straight_line()
-# pyautogui.drag(0, -150, duration = t, button='left')
-# pyautogui.drag(320, 0, duration = t, button='left')
-# pyautogui.drag(0, -350, duration = t, button='left')
-# pyautogui.drag(-280, 0, duration = t, button='left')
-# pencil()
-# pyautogui.drag(-100, 0, duration = t, button='left')
-# straight_line()
-# pyautogui.drag(-240, 0, duration = t, button='left')
-# pyautogui.drag(0, 500, duration = t, button='left')
+pyautogui.moveTo(x=1084, y=483)
 
-# pyautogui.moveTo(x=1084, y=483)
+pyautogui.drag(140, 0, duration = t, button='left')
+pencil()
+pyautogui.drag(100, 0, duration = t, button='left')
+straight_line()
+pyautogui.drag(0, -200, duration = t, button='left')
 
-# pyautogui.drag(140, 0, duration = t, button='left')
-# pencil()
-# pyautogui.drag(100, 0, duration = t, button='left')
-# straight_line()
-# pyautogui.drag(0, -200, duration = t, button='left')
+pyautogui.moveTo(x=1084, y=637)
 
-# pyautogui.moveTo(x=1084, y=637)
+pyautogui.drag(200, 0, duration = t, button='left')
+pyautogui.drag(0, 40, duration = t, button='left')
+pencil()
+pyautogui.drag(0, 50, duration = t, button='left')
+straight_line()
+pyautogui.drag(0, 65, duration = t, button='left')
 
-# pyautogui.drag(200, 0, duration = t, button='left')
-# pyautogui.drag(0, 40, duration = t, button='left')
-# pencil()
-# pyautogui.drag(0, 50, duration = t, button='left')
-# straight_line()
-# pyautogui.drag(0, 65, duration = t, button='left')
+pyautogui.moveTo(x=1703, y=546)
 
-# pyautogui.moveTo(x=1703, y=546)
-
-# pyautogui.drag(-100, 0, duration = t, button='left')
+pyautogui.drag(-100, 0, duration = t, button='left')
 
 # #SACADA
 # square()
